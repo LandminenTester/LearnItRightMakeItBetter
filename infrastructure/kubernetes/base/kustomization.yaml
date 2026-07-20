@@ -1,0 +1,6 @@
+# Kustomize-Basis — Ausbau in Phase 3 (docs/deployment/03-kubernetes.md).
+# Geplante Ressourcen: frontend/backend/worker-Deployments, migrate-Job, Services,
+# Ingress, NetworkPolicies, ConfigMap/Secrets-Verweise, Meilisearch-StatefulSet.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources: []
