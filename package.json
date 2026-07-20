@@ -26,7 +26,7 @@
     "docs:check-links": "node scripts/check-doc-links.mjs"
   },
   "devDependencies": {
-    "@types/node": "^22.20.1",
+    "@types/node": "^26.1.1",
     "eslint": "^10.7.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^10.10.0",
