@@ -65,7 +65,7 @@ jobs:
           tags: local/lir-${{ matrix.image }}:${{ steps.version.outputs.tag }}
 
       - name: Trivy-Scan (docs/security/06 §1 — Fail bei High/Critical mit Fix verfügbar)
-        uses: aquasecurity/trivy-action@0.36.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: local/lir-${{ matrix.image }}:${{ steps.version.outputs.tag }}
           severity: HIGH,CRITICAL
