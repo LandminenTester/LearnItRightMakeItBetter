@@ -1,5 +1,3 @@
-import tailwindcss from '@tailwindcss/vite';
-
 // Frontend-Architektur: docs/architecture/03-frontend-architecture.md.
 // routeRules sind die EINZIGE Stelle für Rendering-Modi (§2).
 export default defineNuxtConfig({
@@ -7,10 +5,6 @@ export default defineNuxtConfig({
   modules: ['@pinia/nuxt', '@nuxtjs/i18n'],
 
   css: ['~/assets/css/main.css'],
-
-  vite: {
-    plugins: [tailwindcss()],
-  },
 
   routeRules: {
     // Öffentliche Inhalte: SSR (SEO, FR-PLAT-004) — SWR-Caching folgt mit den Inhalten
