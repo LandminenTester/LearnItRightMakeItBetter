@@ -1,0 +1,11 @@
+node_modules
+dist
+.output
+.nuxt
+.turbo
+coverage
+pnpm-lock.yaml
+playwright-report
+test-results
+# Markdown wird redaktionell gepflegt (docs/-Konventionen), nicht maschinell formatiert
+*.md

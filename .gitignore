@@ -1,0 +1,31 @@
+# Abhängigkeiten & Caches
+node_modules/
+.pnpm-store/
+.turbo/
+
+# Builds
+dist/
+.output/
+.nuxt/
+.nitro/
+coverage/
+
+# Umgebungsdateien (Beispiele bleiben im Repo)
+.env
+.env.*
+!.env.example
+!.env.dev.example
+
+# Testartefakte
+playwright-report/
+test-results/
+*.lcov
+
+# Betriebssystem / Editor
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
