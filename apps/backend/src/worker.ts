@@ -13,7 +13,6 @@ async function bootstrapWorker(): Promise<void> {
   const app = await NestFactory.createApplicationContext(AppModule);
   app.enableShutdownHooks();
 
-  // eslint-disable-next-line no-console -- Bootstrap-Meldung (Phase 0: pino folgt)
   console.log(`[lir-worker] Worker-Modus bereit (${env.NODE_ENV}) — Queues folgen in Phase 1.`);
 
   const shutdown = async (): Promise<void> => {

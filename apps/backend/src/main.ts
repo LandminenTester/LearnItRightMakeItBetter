@@ -17,7 +17,6 @@ async function bootstrap(): Promise<void> {
   app.enableShutdownHooks(); // Graceful Shutdown (NFR-011)
 
   await app.listen(env.PORT);
-  // eslint-disable-next-line no-console -- Bootstrap-Meldung vor Logger-Initialisierung (Phase 0: pino folgt)
   console.log(`[lir-backend] API bereit auf Port ${env.PORT} (${env.NODE_ENV})`);
 }
 
