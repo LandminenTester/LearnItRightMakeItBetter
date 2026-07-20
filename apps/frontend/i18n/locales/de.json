@@ -1,0 +1,17 @@
+{
+  "app": {
+    "name": "Learn it right. Make it better.",
+    "claim": "Wissen wird erstellt, geprüft, übersetzt und gemeinsam besser gemacht.",
+    "footerLicense": "Inhalte unter CC BY-SA 4.0 · Software unter AGPL-3.0"
+  },
+  "a11y": {
+    "skipToContent": "Zum Inhalt springen"
+  },
+  "home": {
+    "title": "Willkommen",
+    "intro": "Die offene, modulare und selbst hostbare Wissensplattform für Entwickler, Communities, Open-Source-Projekte und Unternehmen.",
+    "ctaPrimary": "Wissen entdecken",
+    "ctaSecondary": "Mehr erfahren",
+    "phaseNote": "Phase 0 — Foundation: Das Fundament steht, die Fachmodule entstehen entlang der Roadmap."
+  }
+}

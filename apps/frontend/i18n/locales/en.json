@@ -1,0 +1,17 @@
+{
+  "app": {
+    "name": "Learn it right. Make it better.",
+    "claim": "Knowledge is created, reviewed, translated and improved together.",
+    "footerLicense": "Content under CC BY-SA 4.0 · Software under AGPL-3.0"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content"
+  },
+  "home": {
+    "title": "Welcome",
+    "intro": "The open, modular and fully self-hostable knowledge platform for developers, communities, open source projects and companies.",
+    "ctaPrimary": "Explore knowledge",
+    "ctaSecondary": "Learn more",
+    "phaseNote": "Phase 0 — Foundation: the groundwork is in place, feature modules follow the roadmap."
+  }
+}

@@ -1,0 +1,9 @@
+/* Tailwind 4 + Design Tokens — Reihenfolge ist relevant (docs/design-system/02). */
+@import 'tailwindcss';
+@import '@lir/design-system/tokens.css';
+@import '@lir/design-system/theme.css';
+
+body {
+  background-color: var(--lir-color-bg-page);
+  color: var(--lir-color-text-primary);
+}
