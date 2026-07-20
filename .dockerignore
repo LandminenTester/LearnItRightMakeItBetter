@@ -1,0 +1,40 @@
+# Docker-Build-Kontext = Repo-Root (infrastructure/docker/Dockerfile.*).
+# Ohne diese Datei kopieren die COPY-Layer versehentlich lokale, host-gebundene
+# node_modules/Build-Artefakte in den Container (pnpm-Symlinks zeigen dann auf
+# absolute Host-Pfade und brechen den Build) statt der frischen, im Container
+# per `pnpm install` erzeugten Ausgabe.
+
+# Abhängigkeiten & Caches (**/ nötig — bare Muster matchen hier nur Root-Ebene,
+# packages/*/node_modules etc. würden sonst durchrutschen)
+**/node_modules/
+**/.pnpm-store/
+**/.turbo/
+
+# Builds
+**/dist/
+**/.output/
+**/.nuxt/
+**/.nitro/
+**/coverage/
+**/prisma/generated/
+
+# Umgebungsdateien (niemals in ein Image backen)
+.env
+.env.*
+!.env.example
+!.env.dev.example
+
+# Testartefakte
+playwright-report/
+test-results/
+*.lcov
+
+# Betriebssystem / Editor / VCS
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+.git/
+
+docs/
