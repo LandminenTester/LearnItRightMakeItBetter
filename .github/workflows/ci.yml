@@ -71,4 +71,5 @@ jobs:
 
   # TODO(Phase 1): e2e-Job gegen compose.e2e-Stack (docs/testing/04) —
   # aktiviert, sobald der Wissens-Loop implementiert ist.
-  # TODO(Release): Docker-Build + Trivy-Scan + SBOM (docs/security/06 §1).
+  # Docker-Build + Trivy-Scan + SBOM (docs/security/06 §1): siehe release.yml
+  # (läuft bei Tag-Push v*.*.* statt hier, da dieser Workflow bei jedem Push/PR feuert).
