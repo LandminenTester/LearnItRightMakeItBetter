@@ -1,0 +1,16 @@
+# Gitleaks-Konfiguration — docs/security/06-secure-development-pipeline.md.
+# Beispiel-/Dev-Dateien enthalten ausschließlich Platzhalter (CHANGE_ME / dev-only).
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Vorlagen und Dev-Platzhalter ohne echte Geheimnisse"
+paths = [
+  '''infrastructure/docker/\.env\.example''',
+  '''infrastructure/docker/\.env\.dev\.example''',
+]
+regexes = [
+  '''CHANGE_ME''',
+  '''dev-only-''',
+  '''dev-master-key-nicht-fuer-produktion''',
+]
