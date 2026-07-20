@@ -15,3 +15,5 @@ allowBuilds:
   prisma: true
   sharp: true
   vue-demi: true
+minimumReleaseAgeExclude:
+  - eslint-plugin-vue@10.10.0
