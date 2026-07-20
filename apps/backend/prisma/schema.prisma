@@ -1,0 +1,45 @@
+// Prisma-Schema — deklarative Quelle des Datenmodells.
+// Verbindliche Referenz je Modul: docs/database/schemas/ · Konventionen: docs/database/01.
+// Migrations-Workflow: docs/database/05-prisma-and-migrations.md (MIG-1…MIG-4).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Identity ───────────────────────────────────────────────────────────────
+// Modelle gemäß docs/database/schemas/identity.md (folgen mit E-02, Phase 1)
+
+// ─── Authorization ──────────────────────────────────────────────────────────
+// docs/database/schemas/authorization.md (E-03, Phase 1)
+
+// ─── Profile ────────────────────────────────────────────────────────────────
+// docs/database/schemas/profile.md (E-07, Phase 1–2)
+
+// ─── Knowledge ──────────────────────────────────────────────────────────────
+// docs/database/schemas/knowledge.md (E-04, Phase 1)
+
+// ─── Translation ────────────────────────────────────────────────────────────
+// docs/database/schemas/translation.md (E-05, Phase 2)
+
+// ─── Organization ───────────────────────────────────────────────────────────
+// docs/database/schemas/organization.md (E-08, Phase 2)
+
+// ─── Repository ─────────────────────────────────────────────────────────────
+// docs/database/schemas/repository.md (E-09, Phase 2)
+
+// ─── Media ──────────────────────────────────────────────────────────────────
+// docs/database/schemas/media.md (E-10, Phase 1)
+
+// ─── Notification ───────────────────────────────────────────────────────────
+// docs/database/schemas/notification.md (E-11, Phase 1–2)
+
+// ─── Audit ──────────────────────────────────────────────────────────────────
+// docs/database/schemas/audit.md (E-12, Phase 1)
+
+// ─── Configuration ──────────────────────────────────────────────────────────
+// docs/database/schemas/configuration.md (E-01, Phase 1)
