@@ -22,6 +22,10 @@ RUN pnpm --filter @lir/shared-types build \
 FROM node:22-slim AS runtime
 ENV NODE_ENV=production
 RUN groupadd -r lir && useradd -r -g lir lir
+# node:22-slim bringt npm inkl. eigener, gebündelter Abhängigkeiten mit (u.a.
+# picomatch/sigstore) — hier zur Laufzeit ungenutzt (nur `node .output/server/index.mjs`),
+# aber Trivy scannt sie trotzdem mit. Entfernt, statt CVEs in totem Code zu tragen.
+RUN rm -rf /usr/local/lib/node_modules/npm /usr/local/bin/npm /usr/local/bin/npx /usr/local/bin/corepack
 WORKDIR /app
 COPY --from=build /repo/apps/frontend/.output /app/.output
 USER lir
