@@ -1,0 +1,74 @@
+# CI-Pipeline — Blöcke gemäß docs/testing/05-quality-gates-performance.md §1.
+# Läuft bei jedem Push und jedem Pull Request; doppelte Läufe werden dedupliziert.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Lint · Typecheck · Test · Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        # Version kommt aus dem packageManager-Feld der package.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: 'Verify: turbo run lint, typecheck, test, build'
+        run: pnpm verify
+
+      - name: Docs-Link-Check
+        run: pnpm docs:check-links
+
+      - name: i18n-Format-Check
+        run: pnpm format:check
+
+  security-audit:
+    name: Dependency-Audit (SCA)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install
+        run: pnpm install --frozen-lockfile
+      - name: Audit — blockierend ab Critical (Baseline-Prozess siehe docs/security/06 §3)
+        run: pnpm audit --prod --audit-level=critical
+
+  gitleaks:
+    name: Secret-Scanning (Gitleaks)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # TODO(Phase 1): e2e-Job gegen compose.e2e-Stack (docs/testing/04) —
+  # aktiviert, sobald der Wissens-Loop implementiert ist.
+  # TODO(Release): Docker-Build + Trivy-Scan + SBOM (docs/security/06 §1).
