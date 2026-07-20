@@ -1,0 +1,62 @@
+/*
+ * Tailwind-4-Theme-Mapping: macht die semantischen Tokens als Utilities verfügbar
+ * (bg-surface, text-primary, border-default, …). Rohwerte sind in Feature-Code verboten
+ * (docs/design-system/06-agentic-ui-rules.md, R2) — es gibt bewusst keine Rohpalette.
+ */
+@theme inline {
+  --color-*: initial;
+
+  --color-page: var(--lir-color-bg-page);
+  --color-surface: var(--lir-color-bg-surface);
+  --color-surface-raised: var(--lir-color-bg-surface-raised);
+  --color-subtle: var(--lir-color-bg-subtle);
+  --color-inverse: var(--lir-color-bg-inverse);
+
+  --color-primary: var(--lir-color-text-primary);
+  --color-secondary: var(--lir-color-text-secondary);
+  --color-muted: var(--lir-color-text-muted);
+  --color-on-inverse: var(--lir-color-text-inverse);
+  --color-on-accent: var(--lir-color-text-on-accent);
+
+  --color-border-default: var(--lir-color-border-default);
+  --color-border-strong: var(--lir-color-border-strong);
+  --color-border-focus: var(--lir-color-border-focus);
+
+  --color-accent: var(--lir-color-accent);
+  --color-accent-hover: var(--lir-color-accent-hover);
+  --color-accent-subtle: var(--lir-color-accent-subtle);
+
+  --color-success: var(--lir-color-success-base);
+  --color-success-subtle: var(--lir-color-success-subtle);
+  --color-success-text: var(--lir-color-success-text);
+  --color-success-border: var(--lir-color-success-border);
+  --color-warning: var(--lir-color-warning-base);
+  --color-warning-subtle: var(--lir-color-warning-subtle);
+  --color-warning-text: var(--lir-color-warning-text);
+  --color-warning-border: var(--lir-color-warning-border);
+  --color-danger: var(--lir-color-danger-base);
+  --color-danger-subtle: var(--lir-color-danger-subtle);
+  --color-danger-text: var(--lir-color-danger-text);
+  --color-danger-border: var(--lir-color-danger-border);
+  --color-info: var(--lir-color-info-base);
+  --color-info-subtle: var(--lir-color-info-subtle);
+  --color-info-text: var(--lir-color-info-text);
+  --color-info-border: var(--lir-color-info-border);
+
+  --color-state-hover: var(--lir-color-state-hover);
+  --color-state-active: var(--lir-color-state-active);
+  --color-state-selected: var(--lir-color-state-selected);
+  --color-state-disabled-bg: var(--lir-color-state-disabled-bg);
+  --color-state-disabled-text: var(--lir-color-state-disabled-text);
+
+  --color-code-bg: var(--lir-color-code-bg);
+  --color-code-text: var(--lir-color-code-text);
+
+  --radius-sm: var(--lir-radius-sm);
+  --radius-md: var(--lir-radius-md);
+  --radius-lg: var(--lir-radius-lg);
+
+  --shadow-raised: var(--lir-shadow-raised);
+  --shadow-overlay: var(--lir-shadow-overlay);
+  --shadow-popover: var(--lir-shadow-popover);
+}

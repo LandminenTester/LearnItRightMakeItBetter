@@ -1,0 +1,124 @@
+/*
+ * Design Tokens — semantische Ebene als CSS-Variablen.
+ * Struktur & Pflichtumfang: docs/design-system/02-design-tokens.md.
+ * Beide Themes sind verpflichtend paarig (NFR-032); Kontrastnachweise werden mit der
+ * finalen Palette in Phase 0 dokumentiert. Startwerte: ruhige Neutralpalette + Indigo-Akzent.
+ */
+:root {
+  /* Hintergrund */
+  --lir-color-bg-page: #f8f9fb;
+  --lir-color-bg-surface: #ffffff;
+  --lir-color-bg-surface-raised: #ffffff;
+  --lir-color-bg-subtle: #eef0f4;
+  --lir-color-bg-inverse: #16181d;
+
+  /* Text */
+  --lir-color-text-primary: #1a1d23;
+  --lir-color-text-secondary: #4b5160;
+  --lir-color-text-muted: #6d7382;
+  --lir-color-text-inverse: #f5f6f8;
+  --lir-color-text-on-accent: #ffffff;
+
+  /* Rahmen */
+  --lir-color-border-default: #d9dce3;
+  --lir-color-border-strong: #b4b9c4;
+  --lir-color-border-focus: #4f5fe8;
+
+  /* Akzent (Branding-Slots, per Instanz überschreibbar — Regel C-8) */
+  --lir-color-accent: #4f5fe8;
+  --lir-color-accent-hover: #3f4ed0;
+  --lir-color-accent-subtle: #e8eafd;
+
+  /* Semantik */
+  --lir-color-success-base: #1a7f4b;
+  --lir-color-success-subtle: #e2f5ea;
+  --lir-color-success-text: #14663c;
+  --lir-color-success-border: #9ed9b8;
+  --lir-color-warning-base: #b3641a;
+  --lir-color-warning-subtle: #fdf0e0;
+  --lir-color-warning-text: #8f4f13;
+  --lir-color-warning-border: #ecc190;
+  --lir-color-danger-base: #c62f3e;
+  --lir-color-danger-subtle: #fce8ea;
+  --lir-color-danger-text: #a32633;
+  --lir-color-danger-border: #efa6ad;
+  --lir-color-info-base: #1f6fb8;
+  --lir-color-info-subtle: #e5f0fa;
+  --lir-color-info-text: #195a95;
+  --lir-color-info-border: #9cc4e8;
+
+  /* Interaktion */
+  --lir-color-state-hover: rgba(26, 29, 35, 0.06);
+  --lir-color-state-active: rgba(26, 29, 35, 0.1);
+  --lir-color-state-selected: #e8eafd;
+  --lir-color-state-disabled-bg: #eef0f4;
+  --lir-color-state-disabled-text: #a2a7b3;
+
+  /* Code */
+  --lir-color-code-bg: #f1f2f6;
+  --lir-color-code-text: #2c3040;
+
+  /* Form, Tiefe, Bewegung */
+  --lir-radius-sm: 4px;
+  --lir-radius-md: 6px;
+  --lir-radius-lg: 10px;
+  --lir-shadow-raised: 0 1px 3px rgba(20, 22, 28, 0.1);
+  --lir-shadow-overlay: 0 8px 24px rgba(20, 22, 28, 0.16);
+  --lir-shadow-popover: 0 4px 12px rgba(20, 22, 28, 0.12);
+  --lir-duration-fast: 100ms;
+  --lir-duration-base: 150ms;
+  --lir-duration-slow: 200ms;
+  --lir-ease-standard: cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+[data-theme='dark'] {
+  --lir-color-bg-page: #131519;
+  --lir-color-bg-surface: #1b1e24;
+  --lir-color-bg-surface-raised: #22262e;
+  --lir-color-bg-subtle: #262a33;
+  --lir-color-bg-inverse: #f5f6f8;
+
+  --lir-color-text-primary: #eceef2;
+  --lir-color-text-secondary: #b6bbc7;
+  --lir-color-text-muted: #8a909e;
+  --lir-color-text-inverse: #1a1d23;
+  --lir-color-text-on-accent: #ffffff;
+
+  --lir-color-border-default: #343945;
+  --lir-color-border-strong: #4a505f;
+  --lir-color-border-focus: #7c89f4;
+
+  --lir-color-accent: #6b78ef;
+  --lir-color-accent-hover: #8591f4;
+  --lir-color-accent-subtle: #262b4d;
+
+  --lir-color-success-base: #35b374;
+  --lir-color-success-subtle: #17301f;
+  --lir-color-success-text: #7fd8a9;
+  --lir-color-success-border: #2c5c40;
+  --lir-color-warning-base: #d9924a;
+  --lir-color-warning-subtle: #34260f;
+  --lir-color-warning-text: #ecc190;
+  --lir-color-warning-border: #6b4c22;
+  --lir-color-danger-base: #e05b68;
+  --lir-color-danger-subtle: #391418;
+  --lir-color-danger-text: #f0a3aa;
+  --lir-color-danger-border: #703038;
+  --lir-color-info-base: #5aa2e0;
+  --lir-color-info-subtle: #12283c;
+  --lir-color-info-text: #a4cdf0;
+  --lir-color-info-border: #2b5379;
+
+  --lir-color-state-hover: rgba(236, 238, 242, 0.07);
+  --lir-color-state-active: rgba(236, 238, 242, 0.12);
+  --lir-color-state-selected: #262b4d;
+  --lir-color-state-disabled-bg: #262a33;
+  --lir-color-state-disabled-text: #5d6370;
+
+  --lir-color-code-bg: #22262e;
+  --lir-color-code-text: #d4d8e2;
+
+  --lir-shadow-raised: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --lir-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --lir-shadow-popover: 0 4px 12px rgba(0, 0, 0, 0.55);
+}
