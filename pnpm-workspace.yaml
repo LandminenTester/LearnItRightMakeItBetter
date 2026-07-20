@@ -15,6 +15,13 @@ allowBuilds:
   prisma: true
   sharp: true
   vue-demi: true
+
+# Backlog für geplante Major-Upgrades (nicht in diesem Durchgang):
+# 1. ESLint 9→10 + eslint-plugin-vue 9→10 (bereits kompatibel laut peerDeps, niedrigster Aufwand)
+# 2. Vitest 3→4 (isoliert testbar, mittlerer Aufwand)
+# 3. Nuxt 4 + @nuxtjs/i18n 10 + Pinia 4 + @pinia/nuxt 1 (gekoppeltes Bundle, größter Aufwand wegen Verzeichnisstruktur)
+# 4. Prisma 6→7 (Backend-only, unabhängig)
+# TypeScript 7 bleibt blockiert durch typescript-eslint Peer-Dependency <6.1.0
 minimumReleaseAgeExclude:
   - eslint-plugin-vue@10.10.0
   - '@typescript-eslint/eslint-plugin@8.65.0'

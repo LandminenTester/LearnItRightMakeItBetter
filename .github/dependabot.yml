@@ -12,6 +12,11 @@ updates:
       minor-and-patch:
         update-types: ['minor', 'patch']
     open-pull-requests-limit: 10
+    ignore:
+      # TypeScript 7 blockiert durch typescript-eslint@^8 Peer-Dependency (>=4.8.4 <6.1.0)
+      # Upgrade möglich erst nach typescript-eslint Major-Update, die TS7 explizit unterstützt
+      - dependency-name: typescript
+        versions: ['>=6.1.0']
 
   - package-ecosystem: github-actions
     directory: '/'
