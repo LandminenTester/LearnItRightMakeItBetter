@@ -9,6 +9,7 @@ dist/
 .nuxt/
 .nitro/
 coverage/
+prisma/generated/
 
 # Umgebungsdateien (Beispiele bleiben im Repo)
 .env

@@ -13,8 +13,11 @@ updates:
         update-types: ['minor', 'patch']
     open-pull-requests-limit: 10
     ignore:
-      # TypeScript 7 blockiert durch typescript-eslint@^8 Peer-Dependency (>=4.8.4 <6.1.0)
-      # Upgrade möglich erst nach typescript-eslint Major-Update, die TS7 explizit unterstützt
+      # TypeScript 7 blockiert durch drei unabhängige Upstream-Blocker (Stand 2026-07-20):
+      # 1. typescript-eslint@^8: peerDependencies.typescript ">=4.8.4 <6.1.0" (nicht mal TS6.1+)
+      # 2. vue-language-tools/Volar: offener Issue vuejs/language-tools#5381 (tsgo/TS7-Support)
+      # 3. @nestjs/cli: benötigt Compiler-API, die TS7.0 bewusst entfernt (verfügbar erst in TS7.1)
+      # Zielzustand bis Blocker-Auflösung: TypeScript 6.0.3
       - dependency-name: typescript
         versions: ['>=6.1.0']
 

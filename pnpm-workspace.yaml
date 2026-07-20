@@ -17,11 +17,14 @@ allowBuilds:
   vue-demi: true
 
 # Backlog für geplante Major-Upgrades (nicht in diesem Durchgang):
-# 1. ESLint 9→10 + eslint-plugin-vue 9→10 (bereits kompatibel laut peerDeps, niedrigster Aufwand)
-# 2. Vitest 3→4 (isoliert testbar, mittlerer Aufwand)
-# 3. Nuxt 4 + @nuxtjs/i18n 10 + Pinia 4 + @pinia/nuxt 1 (gekoppeltes Bundle, größter Aufwand wegen Verzeichnisstruktur)
-# 4. Prisma 6→7 (Backend-only, unabhängig)
-# TypeScript 7 bleibt blockiert durch typescript-eslint Peer-Dependency <6.1.0
+# 1. Vitest 3→4 (isoliert testbar, mittlerer Aufwand)
+# 2. Nuxt 4 + @nuxtjs/i18n 10 + Pinia 4 + @pinia/nuxt 1 (gekoppeltes Bundle, größter Aufwand wegen Verzeichnisstruktur)
+# — ESLint 9→10 + eslint-plugin-vue 9→10 + Prisma 6→7 + TypeScript 5.9.3→6.0.3: abgeschlossen
+#
+# TypeScript 7 bleibt blockiert — Re-Evaluation erst sinnvoll, wenn alle drei Bedingungen erfüllt:
+# 1. typescript-eslint mit peerDependencies.typescript >=6.1.0 verfügbar
+# 2. vue-language-tools/Volar mit tsgo/TS7-Support (vuejs/language-tools#5381 resolved)
+# 3. @nestjs/cli mit Compiler-API-Support für TS7 verfügbar
 minimumReleaseAgeExclude:
   - eslint-plugin-vue@10.10.0
   - '@typescript-eslint/eslint-plugin@8.65.0'
