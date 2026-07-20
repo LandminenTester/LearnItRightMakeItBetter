@@ -18,22 +18,23 @@
 **/coverage/
 **/prisma/generated/
 
-# Umgebungsdateien (niemals in ein Image backen)
-.env
-.env.*
-!.env.example
-!.env.dev.example
+# Umgebungsdateien (niemals in ein Image backen — auch nicht aus apps/backend/.env
+# o.ä.; bare Muster würden hier wie bei node_modules nur Root-Ebene matchen)
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.dev.example
 
 # Testartefakte
-playwright-report/
-test-results/
-*.lcov
+**/playwright-report/
+**/test-results/
+**/*.lcov
 
 # Betriebssystem / Editor / VCS
-.DS_Store
-Thumbs.db
-*.log
-.idea/
+**/.DS_Store
+**/Thumbs.db
+**/*.log
+**/.idea/
 .vscode/
 .git/
 

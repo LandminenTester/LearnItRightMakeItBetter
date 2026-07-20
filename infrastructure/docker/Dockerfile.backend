@@ -15,6 +15,10 @@ RUN pnpm install --frozen-lockfile --filter @lir/backend...
 COPY tsconfig.base.json ./
 COPY packages/shared-types packages/shared-types
 COPY apps/backend apps/backend
+# Platzhalter — `prisma generate` (prisma.config.ts) verlangt eine auflösbare
+# DATABASE_URL, verbindet sich dafür aber nicht wirklich; die echte URL kommt
+# zur Laufzeit über env_file (docs/deployment/02-docker-compose.md).
+ENV DATABASE_URL="postgresql://build:build@localhost:5432/build"
 RUN pnpm --filter @lir/shared-types build \
  && pnpm --filter @lir/backend db:generate \
  && pnpm --filter @lir/backend build
