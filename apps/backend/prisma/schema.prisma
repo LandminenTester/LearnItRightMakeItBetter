@@ -3,12 +3,12 @@
 // Migrations-Workflow: docs/database/05-prisma-and-migrations.md (MIG-1…MIG-4).
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "./generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 // ─── Identity ───────────────────────────────────────────────────────────────
