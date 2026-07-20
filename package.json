@@ -1,0 +1,38 @@
+{
+  "name": "learn-it-right",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Learn it right. Make it better. — Modular Open Knowledge, Developer Community & Enterprise Infrastructure Platform",
+  "license": "AGPL-3.0-only",
+  "packageManager": "pnpm@11.9.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "verify": "turbo run lint typecheck test build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "infra:up": "docker compose -f infrastructure/docker/compose.dev.yml up -d",
+    "infra:down": "docker compose -f infrastructure/docker/compose.dev.yml down",
+    "db:migrate:dev": "pnpm --filter @lir/backend db:migrate:dev",
+    "db:seed": "pnpm --filter @lir/backend db:seed",
+    "db:studio": "pnpm --filter @lir/backend db:studio",
+    "e2e": "pnpm --filter @lir/e2e e2e",
+    "docs:check-links": "node scripts/check-doc-links.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "prettier": "^3.4.2",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.19.1"
+  }
+}
