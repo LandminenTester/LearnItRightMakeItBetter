@@ -29,7 +29,7 @@
     "dotenv": "^17.4.2",
     "ioredis": "^5.4.2",
     "meilisearch": "^0.59.0",
-    "nodemailer": "^7.0.11",
+    "nodemailer": "^9.0.3",
     "pg": "^8.13.2",
     "pino": "^9.14.0",
     "reflect-metadata": "^0.2.2",
