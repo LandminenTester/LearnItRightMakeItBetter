@@ -15,11 +15,11 @@
   "dependencies": {
     "@lir/design-system": "workspace:*",
     "@lir/shared-types": "workspace:*",
-    "@nuxtjs/i18n": "^10.4.1",
+    "@nuxtjs/i18n": "^10.6.0",
     "@pinia/nuxt": "^1.0.1",
-    "nuxt": "^4.5.0",
+    "nuxt": "^4.5.2",
     "pinia": "^4.0.2",
-    "vue": "^3.5.13",
+    "vue": "^3.5.41",
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
@@ -27,6 +27,6 @@
     "tailwindcss": "^4.0.0",
     "typescript": "^5.9.3",
     "vitest": "^4.1.10",
-    "vue-tsc": "^3.3.7"
+    "vue-tsc": "^3.3.9"
   }
 }
