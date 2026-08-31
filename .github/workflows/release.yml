@@ -73,7 +73,7 @@ jobs:
           exit-code: '1'
 
       - name: SBOM erzeugen (Syft, SPDX — docs/security/06 §1)
-        uses: anchore/sbom-action@v0.24.0
+        uses: anchore/sbom-action@v0.24.2
         with:
           image: local/lir-${{ matrix.image }}:${{ steps.version.outputs.tag }}
           format: spdx-json
